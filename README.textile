@@ -1,0 +1,41 @@
+h1. Aesthete.php
+
+"One whose pursuit and admiration of beauty is regarded as excessive or affected."
+
+-- "thefreedictionary.com":http://www.thefreedictionary.com/aesthete
+
+Aesthete.php is an experimental library that lets you create arrays in a more aesthetic manner.
+Returned arrays descend from the "ArrayObject":http://www.php.net/~helly/php/ext/spl/classArrayObject.html SPL class. Which is nice because it lets you add some methods, such as each().
+
+h2. Usage
+
+First, require it:
+pre. require_once('aesthete.php');
+
+Then use it to create an array of words and loop into it:
+pre. w(' this is an array of words ')->each(function($w){
+  echo "{$w}<br/>";
+});
+
+Or an array of any types and loop into it:
+pre. a('one', 'two', 3, 4)->each(function($thing){
+  echo "{$thing}<br/>";
+});
+
+Or a hash of strings and loop into it:
+pre. h("
+ key:            value
+ another:        string
+ number:         23
+ a_long_string:  this is a long string
+")->each(function($k, $v){
+  echo "{$k} => {$v}<br/>";
+});
+
+h2. Minimum requirements
+
+You'll need to have PHP >5.3 because of the AestheteHash and AestheteArray's each methods that takes an anonymous function.
+
+h2. Disclaimer
+
+Don't use this library in anything important where you care about speed or stability!
