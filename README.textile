@@ -10,19 +10,23 @@ Returned arrays descend from the "ArrayObject":http://www.php.net/~helly/php/ext
 h2. Usage
 
 First, require it:
+
 pre. require_once('aesthete.php');
 
 Then use it to create an array of words and loop into it:
+
 pre. w(' this is an array of words ')->each(function($w){
   echo "{$w}<br/>";
 });
 
 Or an array of any types and loop into it:
+
 pre. a('one', 'two', 3, 4)->each(function($thing){
   echo "{$thing}<br/>";
 });
 
 Or a hash of strings and loop into it:
+
 pre. h("
  key:            value
  another:        string
