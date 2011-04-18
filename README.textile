@@ -1,10 +1,9 @@
 h1. Aesthete.php
 
 "One whose pursuit and admiration of beauty is regarded as excessive or affected."
-
 -- "thefreedictionary.com":http://www.thefreedictionary.com/aesthete
 
-Aesthete.php is an experimental library that lets you create arrays in a more aesthetic manner.
+Aesthete.php is an experimental library that lets you create arrays in a more "aesthetic" manner.
 Returned arrays descend from the "ArrayObject":http://www.php.net/~helly/php/ext/spl/classArrayObject.html SPL class. Which is nice because it lets you add some methods, such as each().
 
 h2. Usage
