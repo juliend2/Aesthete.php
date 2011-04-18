@@ -1,5 +1,5 @@
 <?php
-require_once('aesthete.php');
+require_once('../aesthete.php');
 
 echo '<h2>An array: </h2>';
 a('one', 'two', 3, 4)->each(function($thing){

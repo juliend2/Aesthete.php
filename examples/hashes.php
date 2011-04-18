@@ -1,5 +1,5 @@
 <?php
-require_once('aesthete.php');
+require_once('../aesthete.php');
 
 echo '<h2>A Hash: </h2>';
 h("

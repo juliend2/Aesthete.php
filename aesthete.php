@@ -72,7 +72,7 @@ if ( !function_exists('h') )
     {
       if (strpos($element, ':') === false) continue;
       $kv = explode(':', $element, 2);
-      $hash[$kv[0]] = ltrim($kv[1]);
+      $hash[trim($kv[0])] = ltrim($kv[1]);
     }
 
     return new AestheteHash($hash);
