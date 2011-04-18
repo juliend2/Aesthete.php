@@ -1,7 +1,6 @@
 <?php
 
 class AestheteArray extends ArrayObject {
-
   function each ( $iterator_function ) 
   {
     foreach ( $this as $value )
@@ -9,7 +8,6 @@ class AestheteArray extends ArrayObject {
       $iterator_function($value);
     }
   }
-
 }
 
 class AestheteHash extends ArrayObject {
