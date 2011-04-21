@@ -50,33 +50,7 @@ if ( !function_exists('h') )
 {
   function h ($hash_string)
   {
-    $delimiter = false;
-
-    if (strpos($hash_string, "\n") !== false)
-    {
-      $delimiter = "\n";
-    } 
-    else if (strpos($hash_string, ',') !== false)
-    {
-      $delimiter = ",";
-    }
-
-    if ($delimiter)
-    {
-      $key_values = preg_split("/{$delimiter}/", ltrim($hash_string));
-    }
-    else $key_values = array(ltrim($hash_string));
-
-    $hash = array();
-    foreach ( $key_values as $element )
-    {
-      if (strpos($element, ':') === false) continue;
-      $kv = explode(':', $element, 2);
-      $hash[trim($kv[0])] = ltrim($kv[1]);
-    }
-
-    return new AestheteHash($hash);
-
+    return new AestheteHash(parse_ini_string($hash_string, true));
   }
 }
 
