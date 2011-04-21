@@ -35,6 +35,8 @@ pre. h("
   echo "{$k} => {$v}<br/>";
 });
 
+See test/tests.php and examples/* for more usage examples.
+
 h2. Minimum requirements
 
 You'll need to have PHP >5.3 because of the AestheteHash and AestheteArray's each methods that takes an anonymous function.
