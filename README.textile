@@ -41,3 +41,6 @@ h2. Minimum requirements
 
 You'll need to have PHP >5.3 because of the AestheteHash and AestheteArray's each methods that takes an anonymous function.
 
+h2. Special Thanks
+
+Thanks to "Alexandre Gomes Gaigalas":https://github.com/alganet for suggesting the use of parse_ini_string() for parsing the h() function's argument. Awesome stuff are possible now.
