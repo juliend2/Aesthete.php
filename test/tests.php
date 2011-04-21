@@ -50,18 +50,18 @@ class ArrayTests extends UnitTestCase {
   function testComplexHashes(){
     $hash = h('
       long_string    = "this is a reaaaaaaaaaaaaaaaaaaaaalllyyyyy
-      long string with multiple lines and no quotes around it."
+      long string with multiple lines"
     ');
     $this->assertEqual($hash['long_string'], 'this is a reaaaaaaaaaaaaaaaaaaaaalllyyyyy
-      long string with multiple lines and no quotes around it.');
+      long string with multiple lines');
 
     // same but with single quotes for the value
     $hash = h("
       long_string    = 'this is a reaaaaaaaaaaaaaaaaaaaaalllyyyyy
-      long string with multiple lines and no quotes around it.'
+      long string with multiple lines'
     ");
     $this->assertEqual($hash['long_string'], 'this is a reaaaaaaaaaaaaaaaaaaaaalllyyyyy
-      long string with multiple lines and no quotes around it.');
+      long string with multiple lines');
 
     // constant
     define('MY_CONSTANT', 'lol');
