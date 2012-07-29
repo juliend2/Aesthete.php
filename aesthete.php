@@ -40,19 +40,56 @@ if ( !function_exists('w') )
   }
 }
 
+
+# Generates a hash from an array
+function _generate_hash_from_array($args) {
+  $hash = array();
+  $keys = array();
+  $values = array();
+  foreach ($args as $key => $arg) {
+    if (($key) % 2 === 0) {
+      $keys[] = $arg;
+    } else {
+      $values[] = $arg;
+    }
+  }
+  if (count($values) !== count($keys)) {
+    $remaining = array_pop($keys);
+  }
+  foreach ($keys as $index => $key) {
+    $hash[$key] = $values[$index];
+  }
+  if (!empty($remaining)) {
+    array_push($hash, $remaining);
+  }
+  return $hash;
+}
+
+
 // h("
-//  key:            value
-//  another:        string
-//  a_number:       23
-//  a_long_string:  this is a long string
+//  key =            value
+//  a_number =       23
+//  a_long_string =  this is a long string
 // ")
+//
+// OR
+//
+// h(
+//  'key',          'value',
+//  'a_number',     23,
+//  'a_long_string','this is a long string'
+// )
 if ( !function_exists('h') )
 {
   function h ($hash_string)
   {
-    return new AestheteHash(parse_ini_string($hash_string, true));
+    $args = func_get_args();
+    if (count($args) === 1) {
+      return new AestheteHash(parse_ini_string($hash_string, true));
+    } else {
+      return new AestheteHash(_generate_hash_from_array($args));
+    }
   }
 }
-
 
 
